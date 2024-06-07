@@ -1,6 +1,6 @@
 import './Circle.css'
-const progress = [100, 5, 5,];
-function Circle() {
+// const progress = [100, 5, 5,];
+function Circle(props) {
     return (
     <>
      
@@ -10,7 +10,7 @@ function Circle() {
       </div>
       <div className="loading-circle-outer">
       <div className="insert">
-        <p>{progress[0]+"%"}</p>
+        <p>{props.progress+"%"}</p>
       </div>
       </div>
     </div>
