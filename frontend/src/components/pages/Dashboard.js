@@ -3,6 +3,7 @@ import DashboardLeftSide from '../DashCom/DashboardLeftSide';
 import Dashcontent from '../DashCom/DashContent';
 import Profile from '../DashCom/Profile'
 import Topbar from '../DashCom/Topbar';
+import DashboardQuizz from './DashboardQuizz';
 
 import './Dashboard.css';
 
@@ -13,6 +14,8 @@ function Dashboard() {
         switch (currentContent) {
             case 'profile':
                 return <Profile />;
+            case 'dashboardQuiz':
+                return <DashboardQuizz />;
             case 'dashboard':
             default:
                 return <Dashcontent />;

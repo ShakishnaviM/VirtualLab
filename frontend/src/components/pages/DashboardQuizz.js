@@ -5,29 +5,54 @@ import { Col, Row } from 'antd';
 import { Flex, Progress } from 'antd';
 
 const quizData = [
-  { title: 'PHYSICS', practicalNames: ['Practical Name 1', 'Practical Name 2'], percent: 50 },
-  { title: 'CHEMISTRY', practicalNames: ['Practical Name'], percent: 50 },
-  { title: 'BIOLOGY', practicalNames: ['Practical Name'], percent: 50 },
-  { title: 'INFORMATION SYSTEM', practicalNames: ['Practical Name'], percent: 50 },
+  { 
+    title: 'PHYSICS', 
+    practicals: [
+      { name: 'Practical Name 1', score: 7, rank: 1, percentage: 70 }, // 7/10
+      { name: 'Practical Name 2', score: 5, rank: 2, percentage: 50 }  // 5/10
+    ], 
+    completedPercent: 50 
+  },
+  { 
+    title: 'CHEMISTRY', 
+    practicals: [
+      { name: 'Practical Name', score: 8, rank: 1, percentage: 80 }  // 8/10
+    ], 
+    completedPercent: 50 
+  },
+  { 
+    title: 'BIOLOGY', 
+    practicals: [
+      { name: 'Practical Name', score: 6, rank: 1, percentage: 60 }  // 6/10
+    ], 
+    completedPercent: 50 
+  },
+  { 
+    title: 'INFORMATION SYSTEM', 
+    practicals: [
+      { name: 'Practical Name', score: 9, rank: 1, percentage: 90 }  // 9/10
+    ], 
+    completedPercent: 50 
+  }
 ];
 
-const QuizCard = ({ title, practicalNames, percent }) => (
+const QuizCard = ({ title, practicals, completedPercent }) => (
   <Card className='Card' style={{ width: '550px', height: 'auto' }}>
     <Card.Body>
       <Card.Title>{title}</Card.Title>
-      {practicalNames.map((name, index) => (
+      {practicals.map((practical, index) => (
         <div key={index}>
           <br />
-          <Card.Subtitle className="mb-2 text-muted" style={{ marginLeft: '20px' }}>{name}</Card.Subtitle>
+          <Card.Subtitle className="mb-2 text-muted" style={{ marginLeft: '20px' }}>{practical.name}</Card.Subtitle>
           <Card.Text className='cardText'>
             <Row>
               <Col>
-                Score <br />
-                Rank
+                Score: {practical.score} <br />
+                Rank: {practical.rank}
               </Col>
               <Col className='RightCol'>
                 <Flex align="center" wrap gap={30}>
-                  <Progress type="circle" percent={percent} size={50} />
+                  <Progress type="circle" percent={practical.percentage} size={50} />
                 </Flex>
               </Col>
             </Row>
