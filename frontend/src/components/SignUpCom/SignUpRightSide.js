@@ -1,4 +1,4 @@
-import './SignRightSide.css'
+import './SignUpRightSide.css'
 
 function SignRightSide() {
     return ( 

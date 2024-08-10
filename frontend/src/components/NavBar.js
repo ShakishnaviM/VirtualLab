@@ -39,7 +39,7 @@ function NavBar() {
             {currentUser ? (
               <img src={currentUser.profilePicture} alt="profile" />
             ):(
-            <li>SignIn</li>
+            <li className='navbtnLogin'>SignIn</li>
           )}
           </Link>
         </ul>

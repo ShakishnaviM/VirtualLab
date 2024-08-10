@@ -3,13 +3,14 @@ import './Form.css';
 import Button from 'react-bootstrap/Button';
 import { Link, useNavigate } from 'react-router-dom';
 import { First } from 'react-bootstrap/esm/PageItem';
-import { signInStart,signInSuccess, signInFailure } from '../../redux/user/userSlice';
-import {useSelector, useDispatch} from 'react-redux';
+import { signInStart, signInSuccess, signInFailure } from '../../redux/user/userSlice';
+import { useSelector, useDispatch } from 'react-redux';
+import OAuth from './OAuth';
 
 function CreateAccountForm() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const {loading, error} = useSelector ((state) => state.user);
+  const { loading, error } = useSelector((state) => state.user);
   const navigate = useNavigate(); 
   const dispatch = useDispatch();
 
@@ -49,15 +50,15 @@ function CreateAccountForm() {
   
   return (
     <>
-      <div className="containerSign">
-         <div className="header">
-            <img src='favicon.ico'></img> 
-            <h2> Virtual Lab for A/L Students</h2>
+      <div className="formContainerSign">
+         <div className="formHeader">
+         <img src="pictures/VirtualLab Logo.png" alt='logo' />
+          
         </div>    
-        <div className="create-account-form">
+        <div className="formCreateAccount">
           <h2>Log In</h2>
           <form onSubmit={handleSubmit}>
-            <div className="form-group">
+            <div className="formGroup">
               <input
                 type="email"
                 id="email"
@@ -68,7 +69,7 @@ function CreateAccountForm() {
                 required
               />
             </div>
-            <div className="form-group">
+            <div className="formGroup">
               <input
                 type="password"
                 id="password"
@@ -80,10 +81,11 @@ function CreateAccountForm() {
               />
             </div>
             <input type="checkbox" value={First} /> Remember Me
-            <p className='Remember'><a href='#'>Forgot Password?</a></p>
-            <Button disabled={loading}  id='getnbtn' as="input" type="submit" value={loading ? 'loading': 'Sign In'} />
+            <p className="formRemember"><a href='#'>Forgot Password?</a></p>
+            <Button disabled={loading} className="formBtn" as="input" type="submit" value={loading ? 'Loading...' : 'Sign In'} />
+            <OAuth/>
           </form>
-          <p id='last'>
+          <p className="formLast">
             Don't have an account? <Link to='/SignUp'>Sign Up</Link>
           </p>
         </div>

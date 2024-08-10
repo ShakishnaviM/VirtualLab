@@ -1,0 +1,83 @@
+.Container{
+    display: flex;  
+    justify-content: space-around;
+
+}
+.SubjectBox{
+    
+   
+    width: 230px;
+    height: 255px;
+    background-color: rgb(20, 23, 83);
+    border-radius: 20px;
+    box-shadow: 0 0 20px 2px rgba(0,0,0,0.4);
+    transition: 1s;
+}
+
+
+/* .SubjectBox:hover{
+    transform: scale(1.15);
+    z-index: 2;
+} */
+
+.SubjectPic {
+    width: 228px;
+    height: 163px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    background-color: rgb(251, 251, 251);
+    border: 1px solid rgb(20, 23, 83);
+    overflow: hidden;
+    background-position: center center;
+    padding: 5px;
+    transition: 0.5s;
+}
+
+.SubjectBoxh2  {
+    display: block;
+    text-align: center;
+    padding-top: 25px;
+    font-size: 30px;
+    font-weight: bold;
+    color: #69dae2;
+    
+}
+
+
+
+/*@media screen and (max-width:1000px) {
+    .SubjectBox{
+        width: 40%;
+    }
+}
+
+@media screen and (max-width:620px) {
+
+    .subNavContainer{
+        width: 100%;
+    }
+
+    .SubjectBox{
+        width: 80%;
+    }
+}
+*/
+@media (max-width: 768px) {
+
+    .SubjectBox,
+    .SubjectBox1,
+    .SubjectBox2 {
+        width: calc(50% - 86px);
+    }
+
+    #image-cover,
+    .SubjectPic {
+        width: calc(100% - 0px);
+    }
+
+}
+
+.SubjectBox .link:hover{
+    letter-spacing: 0.23em;
+    transition: ease 1.3s;
+}

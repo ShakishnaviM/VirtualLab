@@ -1,0 +1,43 @@
+@keyframes zoom {
+  0%, 100% {
+      transform: scale(1);
+  }
+  50% {
+      transform: scale(1.2);
+  }
+}
+
+.openChat {
+  width: 80px;
+  height: 80px;
+  border: none;
+  border-radius: 50%;
+  background: url('/public/pictures/chatprofile.jpg') no-repeat center center;
+  background-size: cover;
+  cursor: pointer;
+  position: fixed;
+  bottom: 50px;
+  right: 50px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  animation: zoom 3s infinite;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+  z-index: 9999;
+}
+
+.openChat:hover {
+  transform: scale(1.3);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.openChat:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(141, 172, 207, 0.5);
+}
+
+

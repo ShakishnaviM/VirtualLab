@@ -1,0 +1,25 @@
+.textSign{
+    font-size: 16x;
+    color: #002E6D;
+    text-align: center;
+    font-weight: 500;
+    padding-top: 12px;
+}
+.google{
+    width: 100%;
+    padding: 10px;
+    background-color: #002E6D;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+.google:hover {
+    background-color: #0056b3;
+  }
+.google img{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    margin-right:30px ;
+}

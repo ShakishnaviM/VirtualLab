@@ -1,5 +1,7 @@
 import React from 'react'
 import './AboutUs.css'
+import './Slideshow'
+import Slideshow from './Slideshow'
 
 
 function About() {
@@ -12,35 +14,35 @@ function About() {
             
               <div className="minibox">
                 <div className="partA">
-                   <img src='pictures/Flask_alt-1.svg' className='minipics'></img> 
+                   <img src='pictures/practicals.png' className='minipics'></img> 
                 </div>
 
                 <div className="partB">
                     <p>100+</p>
-                    <p>PRACTICALS</p>
+                    <p>Practicals</p>
                 </div>
               </div>
 
               <div className="minibox">
                 <div className="partA">
-                  <img src='pictures/ai 1(1).svg' className='minipics'></img> 
+                  <img src='pictures/AI.png' className='minipics'></img> 
                 </div>
 
                 <div className="partB">
                     <p>AI</p>
-                    <p >ASSISTANCE</p>
+                    <p >Assistance</p>
                 </div>
               </div>
 
               <div className="minibox">
 
                 <div className="partA">
-                  <img src='/pictures/graduation-hat-02.svg' className='minipics'></img> 
+                  <img src='/pictures/evalution.png' className='minipics'></img> 
                 </div>
 
                 <div className="partB">
-                    <p>SELF</p>
-                    <p>EVALUATION</p>
+                    <p>Self</p>
+                    <p>Evaluation</p>
                 </div>
               </div>
 
@@ -51,13 +53,7 @@ function About() {
             <div className="under"></div>
           </div>
 
-          <div className="contentBox">
-            <p>We are a team who was struggled at our A/Ls and trying to assist our </p>
-            <p>fellow sisters and brothers in order to study the practicals effectively </p>
-            <p>using a virtual lab system. </p>
-            <p>Here, A text to Image model, AI chat-bot and NLP are being implemented </p>
-            <p>to make you all aware of the experimental lessons .</p>
-          </div>
+          <Slideshow/>
 
         </div>
         </>

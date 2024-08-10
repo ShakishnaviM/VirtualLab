@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import "./CreateAccountForm.css";
 import Button from "react-bootstrap/Button";
-import { Link, Navigate, useNavigate } from 'react-router-dom';
-
+import { Link, useNavigate } from 'react-router-dom';
+import OAuth from '../LoginCom/OAuth'
 
 function CreateAccountForm() {
   const [Username, setUserName] = useState("");
@@ -12,31 +12,27 @@ function CreateAccountForm() {
   const [confirmPassword, setConfirmPassword] = useState("");
   const [formData, setFormData] = useState({});
 
-  //set loading 
-  const[error, setError]= useState(null);
+  const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
-  const navigate = useNavigate(); // Move useNavigate hook outside of the handleSubmit function
-
+  const navigate = useNavigate();
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-  
-    // Form validation logic here
+
     if (password !== confirmPassword) {
       alert("Passwords do not match");
       return;
     }
-  
-    // Set form data before making the fetch call
+
     const formData = {
       username: Username,
       email: email,
       Stream: Stream,
       password: password,
     };
-  
+
     try {
-      setLoading (true);
+      setLoading(true);
       const res = await fetch("http://localhost:3001/api/auth/signup", {
         method: "POST",
         headers: {
@@ -44,24 +40,21 @@ function CreateAccountForm() {
         },
         body: JSON.stringify(formData),
       });
-  
+
       const data = await res.json();
-      console.log(data);
       setLoading(false);
-      if(data.success===false){
+      if (data.success === false) {
         setError(true);
         return;
       }
 
-  
-      // Clear the form after successful submission
       setUserName("");
       setEmail("");
       setStream("");
       setPassword("");
       setConfirmPassword("");
-      setFormData({}); // Clear form data state as well
-      navigate('/login'); // Use navigate function to navigate to the desired route
+      setFormData({});
+      navigate('/login');
 
     } catch (error) {
       setLoading(false);
@@ -69,15 +62,13 @@ function CreateAccountForm() {
       console.error("Error submitting form:", error);
     }
   };
-  
 
   return (
     <>
       <div className="containerSign">
         <div className="header">
           <a href="/">
-            {" "}
-            <img src="pictures/VirtualLab Logo.png" alt='logo'></img>
+            <img src="pictures/VirtualLab Logo.png" alt='logo' />
           </a>
         </div>
 
@@ -107,14 +98,39 @@ function CreateAccountForm() {
               />
             </div>
             <div className="form-group">
-              <input
-                type="text"
-                id="stream"
-                name="Stream"
-                placeholder="Stream"
-                value={Stream}
-                onChange={(event) => setStream(event.target.value)}
-              />
+              <label>Stream:</label>
+              <div className="radio-group">
+                <label>
+                  <input
+                    type="radio"
+                    name="Stream"
+                    value="Bio Science"
+                    checked={Stream === "Bio Science"}
+                    onChange={(event) => setStream(event.target.value)}
+                  />
+                  Bio Science
+                </label>
+                <label>
+                  <input
+                    type="radio"
+                    name="Stream"
+                    value="Physical Science"
+                    checked={Stream === "Physical Science"}
+                    onChange={(event) => setStream(event.target.value)}
+                  />
+                  Physical Science
+                </label>
+                <label>
+                  <input
+                    type="radio"
+                    name="Stream"
+                    value="E-technology"
+                    checked={Stream === "E-technology"}
+                    onChange={(event) => setStream(event.target.value)}
+                  />
+                  E-technology
+                </label>
+              </div>
             </div>
             <div className="form-group">
               <input
@@ -138,13 +154,14 @@ function CreateAccountForm() {
                 required
               />
             </div>
-            <Button disabled={loading} id="getnbtn" as="input" type="submit" value={loading ? 'loading': 'Sign Up'} />
+            <Button disabled={loading} id="getnbtn" as="input" type="submit" value={loading ? 'Loading...' : 'Sign Up'} />
+            <OAuth/>
           </form>
           <p id="last">
             Already have an account? <Link to="/login">Sign In</Link>
           </p>
         </div>
-        <p >{error && 'Something went wrong'}</p>
+        <p>{error && 'Something went wrong'}</p>
       </div>
     </>
   );

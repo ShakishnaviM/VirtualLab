@@ -5,12 +5,13 @@ import SignRightSide from '../LoginCom/SignRightSide'
 function Login() {
     return ( 
         <>
-        <div className="clmn">
+         <div className="logincontSign">
+      <div className="loginflexy">
           <SignRightSide/>
-            <div className="contSign">
-              <Form/> 
-            </div>
-        </div>
+         <Form/>
+
+       </div>
+       </div>
         </>
      );
 }

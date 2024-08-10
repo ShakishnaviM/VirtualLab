@@ -1,56 +1,45 @@
-import './DashboardLeftSide.css'
+import './DashboardLeftSide.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import {Link} from 'react-router-dom';
-function DashboardLeftSide() {
-    return ( 
+
+function DashboardLeftSide({ setCurrentContent }) {
+    return (
         <>
-        <div className="menu">
-      <div className="logo">
-        <img src="/pictures/VirtualLab Logo.png"  />
-      </div>
+            <div className="menu">
+                <div className="logo">
+                    <img src="/pictures/VirtualLab Logo.png" />
+                </div>
 
-      <div className='search-box1'>
-        <input type='text' placeholder='search here...' />
-        {/* <BiSearch className='icon' /> */}
+                <div className='search-box1'>
+                    <input type='text' placeholder='search here...' />
+                </div>
+                <div className="menubelowsearch">
+                    <p>Menu</p>
+                </div>
 
+                <div className='Dash1'>
+                    <p>Dashboard</p>
+                </div>
 
+                <div className="menu--list">
+                    <div className='item' onClick={() => setCurrentContent('profile')}>
+                        Profile
+                    </div>
 
-      </div> 
-      <div className="menubelowsearch"> <p>Menu</p></div>
-     
-      <div className='Dash1'>
-        <p>Dashboard </p>
-        </div>
+                    <div className='item' onClick={() => setCurrentContent('dashboard')}>
+                        Quizzes
+                    </div>
 
-      
-      <div className="menu--list">
-        <a href="#" className='item'>
-          <img src="/pictures/Profile_Icon.svg"></img>
-          <Link to='/profile'>profile</Link> 
-        </a>
+                    <div className='item' onClick={() => setCurrentContent('dashboard')}>
+                        Experiments
+                    </div>
 
-        <a href="#" className='item'>
-          <img src="/pictures/Quiz_Icon.svg"></img>
-          Quizzes
-        </a>
-
-        <a href="#" className='item'>
-          <img src="/pictures/Experiments_Icon.svg"></img>
-
-          Experiments
-        </a>
-
-        <a href="#" className='item'>
-          <img src="/pictures/Ai_chat_icon.svg"></img>
-
-          AI chat
-        </a>
-
-      </div>
-
-    </div>
+                    <div className='item' onClick={() => setCurrentContent('dashboard')}>
+                        AI chat
+                    </div>
+                </div>
+            </div>
         </>
-     );
+    );
 }
 
 export default DashboardLeftSide;

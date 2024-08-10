@@ -1,6 +1,22 @@
+/* General styles */
 
-.clmn{
-    display: flex;
-    flex-direction: row;
-    margin: 0 20px 0 20px;
+
+.logincontSign {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh ;
+  background-color: #002E6D;
+}
+
+.loginflexy {
+  height: 99vh !important;
+
+  display: flex;
+  width: 80%;
+  max-width: 1200px;
+  background-color: #E8F0FE;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }

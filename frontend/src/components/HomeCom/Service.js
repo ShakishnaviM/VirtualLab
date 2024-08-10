@@ -15,13 +15,7 @@ function Service() {
                 <MiddleBox></MiddleBox>
               
             </div>
-            <div className="last">
-
-                <div className="getstarted">
-                <Button id='getbtn' as="input" type="submit" value="Get Started Now" />
-
-                </div>
-            </div>
+           
             <div className='end'></div>
         </div>
         </>

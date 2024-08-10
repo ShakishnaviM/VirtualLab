@@ -1,18 +1,21 @@
 import { FaPlay } from "react-icons/fa";
-import './PracticalFooter.css'
+import './PracticalFooter.css';
+import { useParams, Link } from 'react-router-dom';
 
-
-function PracticalFooter(){
-    return(
+function PracticalFooter() {
+    const { subject, index } = useParams();
+    return (
         <>
-        <div className="footer">
-            <div className="btns">
-                <button className="Widebtn">See Courses</button>
-                <a href="/PracticalSteps"><button className="playbtn"><FaPlay/> Start Practical</button></a>
+            <div className="footer">
+                <div className="btns">
+                    <button className="Widebtn">See Courses</button>
+                    <Link to={`/PracticalSteps/${subject}/${index}`}>
+                        <button className="playbtn"><FaPlay /> Start Practical</button>
+                    </Link>
+                </div>
             </div>
-        </div>
         </>
-    )
+    );
 }
 
-export default PracticalFooter
+export default PracticalFooter;

@@ -1,0 +1,22 @@
+.rightsideC {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #f5f5f5;
+  padding: 0 40px 0 40px;
+}
+
+.rightsideC img {
+  width: 100%;
+  max-width: 600px;
+  height: 95vh;
+}
+
+.rightsideC h1 {
+  font-size: 24px;
+  color: #002E6D;
+  text-align: center;
+  margin: 0;
+}

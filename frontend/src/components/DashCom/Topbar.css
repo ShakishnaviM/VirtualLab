@@ -68,22 +68,19 @@
     align-items: center;
     height: 55px;
     width: 200px;
+    align-items: center;
+    padding: 0 18px;
     
 }
-.propic{
-    margin-left: 5px;
+.propic img{
+    
     width: 45px;
     height: 45px;
     border-radius: 50%;
     background-color: #21222a;
-    overflow: hidden;
-
+    object-fit: cover;
 }
-.profile-pic {
-    width: 45px;
-    height: 45px;
-    object-fit: cover; /* Optional: Maintain aspect ratio within the 45x45 area */
-  }
+
 .nameofuser li{
    font-size: 14px;
 

@@ -1,93 +1,48 @@
 import './PracticalItem.css';
-import {Link} from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
+import { useParams, useNavigate } from 'react-router-dom';
+import axios from 'axios';
 
 function PracticalItem() {
-    return(
-        <>
-           <div className='section'>
-                <h2>Practicals</h2>
+    const { subject } = useParams();
+    const [practicals, setPracticals] = useState([]);
+    const navigate = useNavigate();
 
-                <div className='items'>
-                    <div className='listDown'>
-                        
-                        <Link to='/singlePratical' className='link' style={{textDecoration:'none'}}>
-                            <img src="pictures/01.jpg" alt="1st practical">
-
-                            </img>
-
-                            <h4 className="head">
-                                Physical quantities without units
-                            </h4>
-
-                            <p className="info">
-                            Appreciates that all physical quantities consist of a numerical 
-                            magnitude with or without a unit. Uses the prefixes and their symbols 
-                            to indicate multiples and submultiples
-                            </p>
-
-                            <button  className='btn'>Learn More</button>
-                        </Link>
-                    </div>
-
-                    <div className='listDown dwn'>
-                        <img src="pictures/01.jpg" alt="1st practical">
-
-                        </img>
-
-                        <h4 className="head ">
-                            Physical quantities without units
-                        </h4>
-
-                        <p className="info">
-                            Appreciates that all physical quantities consist of a numerical 
-                            magnitude with or without a unit. Uses the prefixes and their symbols 
-                            to indicate multiples and submultiples
-                        </p>
-
-                        <button  className='btn'>Learn More</button>
-                    </div>
-
-                    <div className='listDown dwn'>
-                        <img src="pictures/01.jpg" alt="1st practical">
-
-                        </img>
-
-                        <h4 className="head">
-                            Physical quantities without units
-                        </h4>
-
-                        <p className="info">
-                            Appreciates that all physical quantities consist of a numerical 
-                            magnitude with or without a unit. Uses the prefixes and their symbols 
-                            to indicate multiples and submultiples
-                        </p>
-
-                        <button  className='btn'>Learn More</button>
-                    </div>
-
-                    <div className='listDown'>
-                        <img src="pictures/01.jpg" alt="1st practical"> 
-                        </img>
-
-                        <h4 className="head">
-                            Physical quantities without units
-                        </h4>
-
-                        <p className="info">
-                            Appreciates that all physical quantities consist of a numerical 
-                            magnitude with or without a unit. Uses the prefixes and their symbols 
-                            to indicate multiples and submultiples
-                        </p>
-
-                        <button  className='btn'>Learn More</button>
-                    </div>
-
-                </div>
-           </div>
-          
-        </>
-    )
-}
+    useEffect(() => {
+        const fetchData = async () => {
+            try {
+                const response = await axios.get(`http://localhost:3001/api/subjects/${subject}List?subject=${subject}`);
+                // http://localhost:3001/api/subjects/${s}List?subject=${subject}`
+                setPracticals(response.data);
+            } catch (error) {
+                console.error('Error fetching data:', error);
+            }
+        };
+        fetchData();
+    }, [subject]);
+    const handlePracticalClick = (index) => {
+        navigate(`/singlepractical/${subject}/${index}`);
+      };
+    
+      return (
+        <div className='section'>
+          <h2>{subject} Practicals</h2>
+            <div className='item'>
+            {practicals.map((practical, index) => (
+              
+              <div className='listDown' key={index} onClick={() => handlePracticalClick(index)}>
+                <img src={practical.image} alt={practical.name} />
+                <h4 className="head">{practical.name}</h4>
+                
+                <button className='btn'>Learn More</button>
+              </div>
+            ))}
+            </div>
+            <div className='items'>
+          </div>
+        </div>
+      );
+    };
 
 
 export default PracticalItem

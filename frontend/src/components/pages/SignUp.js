@@ -1,6 +1,6 @@
 import CreateAccountForm from '../SignUpCom/CreateAccountForm';
 import './SignUp.css';
-import SignRightSide from '../SignUpCom/SignRightSide';
+import SignRightSide from '../SignUpCom/SignUpRightSide';
 
 function SignUp() {
     return ( 
@@ -9,8 +9,8 @@ function SignUp() {
         
       <div className="contSign">
       <div className="flexy">
-          <SignRightSide></SignRightSide> 
-      <CreateAccountForm></CreateAccountForm> 
+          <SignRightSide/>
+          <CreateAccountForm/>
 
        </div>
        </div>

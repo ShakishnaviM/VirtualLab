@@ -1,13 +1,14 @@
 .containerH {
     background-color: rgb(20, 23, 83);
     display: flex;
-    height: 100vh;
+    height: 900px;
     color: white;
     padding-top: 80px;
+    background-image: url(/public/pictures/3520647.jpg);
 }
 
 .leftcontent {
-    background-color: rgb(20, 23, 83);
+    background: transparent;
     margin-left: 50px;
     margin-top: 30px;
     width: 50%;
@@ -16,13 +17,26 @@
     width: 630px;
     height: 640px;
     background-repeat: no-repeat;
+    animation: float 3s ease-in-out infinite;
 }
+
+@keyframes float {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
 
 .rightcontent {
     width: 50%;
     margin-top: 150px;
     margin-left: 100px;
-
 }
 
 .rightcontent h2 {
@@ -36,17 +50,40 @@
     padding-top: 10px;
 }
 
-
 #signbtn {
-    margin-left: 50px;
     margin-top: 30px;
     color: black;
-    font-size: xx-large;
+    font-size: 26px;
     font-weight: bold;
     background-color: rgb(141, 172, 207);
-    height: 80px;
-    width: 350px;
+    height: 60px;
+    width: 250px;
     border-radius: 40px;
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+#signbtn:hover {
+    background-color: rgb(20, 23, 83);
+    color: white;
+    transform: scale(1.05);
+}
+
+#chatbtn {
+    margin-top: 30px;
+    color: black;
+    font-size: 26px;
+    font-weight: bold;
+    background-color: rgb(141, 172, 207);
+    height: 60px;
+    width: 250px;
+    border-radius: 40px;
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+#chatbtn:hover {
+    background-color: rgb(20, 23, 83);
+    color: white;
+    transform: scale(1.05);
 }
 
 .picture {
@@ -59,7 +96,6 @@
         /* Stack items vertically */
         flex-wrap: wrap;
         height: 89vh;
-
     }
 
     .leftcontent,
@@ -79,7 +115,6 @@
         max-width: 40%;
         border-radius: 0;
         margin-top: 0;
-
     }
 
     .rightcontent h1 {
