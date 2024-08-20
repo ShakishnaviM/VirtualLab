@@ -1,17 +1,23 @@
 import { FaPlay } from "react-icons/fa";
-import './PracticalFooter.css';
-import { useParams, Link } from 'react-router-dom';
+import '../PracticalTheoryCom/PracticalFooter.css';
+import { useNavigate, useParams } from 'react-router-dom';
 
 function PracticalFooter() {
-    const { subject, index } = useParams();
+    const navigate = useNavigate();
+    const { subject, index } = useParams(); // Assuming these parameters are available
+
+    const startQuiz = () => {
+        navigate(`/quiz/${subject}/${index}`);
+    };
+
     return (
         <>
             <div className="footer">
                 <div className="btns">
-                    <button className="Widebtn">See Courses</button>
-                    <Link to={`/PracticalSteps/${subject}/${index}`}>
-                        <button className="playbtn"><FaPlay /> Start Practical</button>
-                    </Link>
+                    <button className="Widebtn">View Theory</button>
+                    <button className="playbtn" onClick={startQuiz}>
+                        <FaPlay /> Start Quiz
+                    </button>
                 </div>
             </div>
         </>
