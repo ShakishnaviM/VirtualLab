@@ -17,6 +17,7 @@ import PrivateRoute from './components/PrivateRoute.js';
 import Profile from './components/DashCom/Profile';
 import Chatbot from './components/ChatCom/chatbot'
 import DashboardQuizz from './components/pages/DashboardQuizz.js';
+import AdminDashboard from './components/pages/AdminDashboard.js';
 
 function App() {
   return (
@@ -42,6 +43,7 @@ function App() {
               <Route path='/Review' exact element={<Review />} />
               <Route path='/chatbot' exact element={<Chatbot/>}/>
               <Route path='/DashboardQuiz' exact element={<DashboardQuizz/>}/>
+              <Route path='/AdminDashboard' exact element={<AdminDashboard/>}/>
             </Routes>
           </Router>
         </PersistGate>
