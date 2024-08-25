@@ -1,24 +1,24 @@
 import { useState } from 'react';
-import DashboardLeftSide from '../DashCom/DashboardLeftSide';
-import Dashcontent from '../DashCom/DashContent';
-import Profile from '../DashCom/Profile'
-import Topbar from '../DashCom/Topbar';
-import DashboardQuizz from './DashboardQuizz';
+import DashboardLeftSide from '../AdminDashCom/leftSidePanel';
+import Subjects from '../AdminDashCom/subjectBox';
+import Topbar from '../AdminDashCom/TopBar';
+import AddSubjects from '../AdminDashCom/AddSubjects';  
+import AddPracticals from '../AdminDashCom/AddPracticals';
 
 import './Dashboard.css';
 
 function AdminDashboard() {
-    const [currentContent, setCurrentContent] = useState('dashboard'); // State to manage current content
+    const [currentContent, setCurrentContent] = useState('subjects'); // State to manage current content
 
     const renderContent = () => {
         switch (currentContent) {
-            case 'profile':
-                return <Profile />;
-            case 'dashboardQuiz':
-                return <DashboardQuizz />;
-            case 'dashboard':
+            case 'addSubjects':
+                return <AddSubjects />; 
+            case 'addPracticals':
+                    return <AddPracticals />; 
+            case 'subjects':
             default:
-                return <Dashcontent />;
+                return <Subjects />;
         }
     };
 

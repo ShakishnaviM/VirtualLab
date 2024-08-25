@@ -18,6 +18,9 @@ import Profile from './components/DashCom/Profile';
 import Chatbot from './components/ChatCom/chatbot'
 import DashboardQuizz from './components/pages/DashboardQuizz.js';
 import AdminDashboard from './components/pages/AdminDashboard.js';
+import addSubjects from './components/AdminDashCom/AddSubjects.js';
+import AdminAddPractical from './components/AdminDashCom/AddPracticals.js';
+import AdminSubjectList from './components/AdminDashCom/subjectBox.js';
 
 function App() {
   return (
@@ -44,6 +47,10 @@ function App() {
               <Route path='/chatbot' exact element={<Chatbot/>}/>
               <Route path='/DashboardQuiz' exact element={<DashboardQuizz/>}/>
               <Route path='/AdminDashboard' exact element={<AdminDashboard/>}/>
+              <Route path='/admin/addPrcticals' exact element={<AdminAddPractical/>}/>
+              <Route path='/Admin/addSubjects' exact element={<addSubjects/>}/>
+              <Route path='/Admin/showSubjects' exact element={<AdminSubjectList/>}/>
+
             </Routes>
           </Router>
         </PersistGate>
