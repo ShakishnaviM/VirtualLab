@@ -24,6 +24,7 @@ import AdminAddPractical from './components/AdminDashCom/AddPracticals.js';
 import AdminSubjectList from './components/AdminDashCom/subjectBox.js';
 
 import { Protected } from './components/LoginCom/Protected.js';
+import { UserProtect } from './components/LoginCom/UserProtect.js';
 
 
 function App() {
@@ -39,21 +40,21 @@ function App() {
                    <Route path='/Dashboard' exact element={<Protected><Dashboard /></Protected>} />
               </Route>
               <Route element = {<PrivateRoute/>}>
-                   <Route path='/Profile' exact element={<Profile />} />
+                   <Route path='/Profile' exact element={<Protected><Profile /></Protected>} />
               </Route>
-              <Route path='/Subjects' exact element={<SubjectNavigation />} />
+              <Route path='/Subjects' exact element={<Protected><SubjectNavigation /></Protected>} />
               <Route path='/Login' exact element={<Login />} />
-              <Route path='/subjectList/:subject' exact element={<PracticalNav />} />
-              <Route path="/singlepractical/:subject/:index" exact element={<PracticalTheory />} />
-              <Route path='/PracticalSteps/:subject/:index' exact element={<PracticalSteps />} />
-              <Route path='/quiz' exact element={<Quiz />} />
-              <Route path='/Review' exact element={<Review />} />
-              <Route path='/chatbot' exact element={<Chatbot/>}/>
+              <Route path='/subjectList/:subject' exact element={<Protected><PracticalNav /></Protected>} />
+              <Route path="/singlepractical/:subject/:index" exact element={<Protected><PracticalTheory /></Protected>} />
+              <Route path='/PracticalSteps/:subject/:index' exact element={<Protected><PracticalSteps /></Protected>} />
+              <Route path='/quiz' exact element={<Protected><Quiz /></Protected>} />
+              <Route path='/Review' exact element={<Protected><Review /></Protected>} />
+              <Route path='/chatbot' exact element={<Protected><Chatbot/></Protected>}/>
               <Route path='/DashboardQuiz' exact element={<Protected><DashboardQuizz/></Protected>}/>
-              <Route path='/AdminDashboard' exact element={<AdminDashboard/>}/>
-              <Route path='/admin/addPrcticals' exact element={<AdminAddPractical/>}/>
-              <Route path='/Admin/addSubjects' exact element={<addSubjects/>}/>
-              <Route path='/Admin/showSubjects' exact element={<AdminSubjectList/>}/>
+              <Route path='/AdminDashboard' exact element={<UserProtect><AdminDashboard/></UserProtect>}/>
+              <Route path='/admin/addPrcticals' exact element={<UserProtect><AdminAddPractical/></UserProtect>}/>
+              <Route path='/Admin/addSubjects' exact element={<UserProtect><addSubjects/></UserProtect>}/>
+              <Route path='/Admin/showSubjects' exact element={<UserProtect><AdminSubjectList/></UserProtect>}/>
 
             </Routes>
           </Router>
