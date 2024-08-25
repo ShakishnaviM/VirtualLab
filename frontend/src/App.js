@@ -18,9 +18,13 @@ import Profile from './components/DashCom/Profile';
 import Chatbot from './components/ChatCom/chatbot'
 import DashboardQuizz from './components/pages/DashboardQuizz.js';
 import AdminDashboard from './components/pages/AdminDashboard.js';
+
 import addSubjects from './components/AdminDashCom/AddSubjects.js';
 import AdminAddPractical from './components/AdminDashCom/AddPracticals.js';
 import AdminSubjectList from './components/AdminDashCom/subjectBox.js';
+
+import { Protected } from './components/LoginCom/Protected.js';
+
 
 function App() {
   return (
@@ -29,10 +33,10 @@ function App() {
         <PersistGate persistor={persistor} loading={null}>
           <Router>
             <Routes>
-              <Route path='/' exact element={<Home />} />
+              <Route path='/' exact element={<Protected><Home /></Protected>} />
               <Route path='/SignUp' exact element={<SignUp />} />
               <Route element = {<PrivateRoute/>}>
-                   <Route path='/Dashboard' exact element={<Dashboard />} />
+                   <Route path='/Dashboard' exact element={<Protected><Dashboard /></Protected>} />
               </Route>
               <Route element = {<PrivateRoute/>}>
                    <Route path='/Profile' exact element={<Profile />} />
@@ -45,7 +49,7 @@ function App() {
               <Route path='/quiz' exact element={<Quiz />} />
               <Route path='/Review' exact element={<Review />} />
               <Route path='/chatbot' exact element={<Chatbot/>}/>
-              <Route path='/DashboardQuiz' exact element={<DashboardQuizz/>}/>
+              <Route path='/DashboardQuiz' exact element={<Protected><DashboardQuizz/></Protected>}/>
               <Route path='/AdminDashboard' exact element={<AdminDashboard/>}/>
               <Route path='/admin/addPrcticals' exact element={<AdminAddPractical/>}/>
               <Route path='/Admin/addSubjects' exact element={<addSubjects/>}/>
