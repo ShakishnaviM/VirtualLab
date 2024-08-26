@@ -129,10 +129,9 @@ function Dashcontent() {
           ))}
         </div>
       </div>
-      
+      <ImageSlider />
     </>
   );
 }
 
 export default Dashcontent;
-
