@@ -149,15 +149,9 @@ function Quiz() {
                                 <Col span={24}><h4>Your Quiz Result</h4></Col>
                             </Row>
                             <Row>
-                                <Col className='profpic' span={6}><img src="pictures/user.jpg" alt="User" /></Col>
+                                <Col className='profpic' span={6}></Col>
                                 <Col className='profdesc' span={12}>
-                                    <Row>
-                                        <Col className='name' span={24}><h5>John Smith</h5></Col>
-                                    </Row>
-
-                                    <Row>
-                                        <Col className='emal' span={24}><h5>johnSmith@gmail.com</h5></Col>
-                                    </Row>
+                                    
                                     <Row>
                                         <Col className='f-resu' span={24}>
                                             <h2>You Scored {score} out of {questions.length}</h2>

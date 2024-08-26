@@ -129,7 +129,7 @@ function Dashcontent() {
           ))}
         </div>
       </div>
-      <ImageSlider />
+      
     </>
   );
 }
