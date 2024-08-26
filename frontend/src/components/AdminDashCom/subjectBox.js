@@ -1,8 +1,10 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import SubjectCard from './SubjectCard';
 import './subjectBox.css';
+import ImageSlider from './slider';
 
-function AdminSubjectList () {
+const Subjects = ({ onSubjectClick }) => {
     const [subjects, setSubjects] = useState([]);
 
     useEffect(() => {
@@ -18,15 +20,26 @@ function AdminSubjectList () {
     }, []);
 
     return (
-        <div className="container">
-            <h1>Subjects List</h1>
-            <ul>
-                {subjects.map((subject) => (
-                    <li key={subject._id}>{subject.name}</li>
-                ))}
-            </ul>
+        <>
+        <div className="subject-grid">
+            {subjects.map((subject) => (
+                <SubjectCard 
+                    key={subject._id} 
+                    subject={subject} 
+                    onClick={() => onSubjectClick(subject)} 
+                />
+            ))}
+            
         </div>
+        
+        <ImageSlider/>
+       
+       
+        </>
+       
+        
+        
     );
 };
 
-export default AdminSubjectList;
+export default Subjects;

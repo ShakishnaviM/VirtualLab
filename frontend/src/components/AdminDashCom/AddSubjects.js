@@ -20,7 +20,7 @@ function AddSubjects() {
         <div className="form-container">
             <h2>Add New Subject</h2>
             <form onSubmit={handleSubmit}>
-                <div className="form-group">
+                <div className="form-g">
                     <label htmlFor="subjectName">Subject Name</label>
                     <input
                         type="text"
@@ -29,8 +29,18 @@ function AddSubjects() {
                         onChange={(e) => setSubjectName(e.target.value)}
                         required
                     />
+                    <label htmlFor="subjectName">Year of the Syllabus</label>
+
+                     <input
+                        type="text"
+                        id="subjectYear"
+                       
+                        
+                        required
+                    />
+                     <button type="submit" className="submit-btn">Add Subject</button>
                 </div>
-                <button type="submit" className="submit-btn">Add Subject</button>
+               
             </form>
         </div>
     );

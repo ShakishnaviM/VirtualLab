@@ -29,9 +29,6 @@ function AdminDashboardLeftSide({ setCurrentContent }) {
                         Add Practicals
                     </div>
 
-                    <div className='item' onClick={() => setCurrentContent('addSyllabus')}>
-                        Add Syllabus
-                    </div>
                 </div>
             </div>
         </>

@@ -1,0 +1,55 @@
+/* PracticalCard.css */
+.practical-card {
+    background-color: #FFFFFF;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+}
+
+.practical-card:hover {
+    transform: translateY(-5px);
+}
+
+.practical-card h3 {
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.practical-card p {
+    color: #777;
+    margin-bottom: 15px;
+}
+
+.practical-actions {
+    display: flex;
+    justify-content: space-between;
+}
+
+.update-btn,
+.delete-btn {
+    padding: 10px 15px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+}
+
+.update-btn {
+    background-color: #4A90E2;
+    color: #fff;
+}
+
+.update-btn:hover {
+    background-color: #357ABD;
+}
+
+.delete-btn {
+    background-color: #E94A4A;
+    color: #fff;
+}
+
+.delete-btn:hover {
+    background-color: #C13C3C;
+}

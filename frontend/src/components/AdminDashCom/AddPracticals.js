@@ -29,7 +29,7 @@ function AddPracticals() {
 
     return (
         <div className="form-wrapper">
-            <h2 className="form-title">Practicals</h2>
+            <h2 className="form-title">Add Practicals</h2>
             <form className="practicals-form" onSubmit={handleSubmit}>
                 <div className="form-group">
                     <label htmlFor="subjectCategory">Subject Category</label>
@@ -62,7 +62,7 @@ function AddPracticals() {
                     />
                 </div>
                 <div className="form-group">
-                    <label htmlFor="intro">Intro</label>
+                    <label htmlFor="intro">Introduction</label>
                     <input 
                         type="text" 
                         id="intro" 
@@ -72,7 +72,7 @@ function AddPracticals() {
                     />
                 </div>
                 <div className="form-group">
-                    <label htmlFor="images">Images</label>
+                    <label htmlFor="images">Images(Link)  </label>
                     <input 
                         type="text" 
                         id="images" 
@@ -82,7 +82,7 @@ function AddPracticals() {
                     />
                 </div>
                 <div className="form-group">
-                    <label htmlFor="featuredImages">Featured Images</label>
+                    <label htmlFor="featuredImages">Featured Images (Link) </label>
                     <input 
                         type="text" 
                         id="featuredImages" 
