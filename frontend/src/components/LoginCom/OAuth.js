@@ -32,10 +32,9 @@ function OAuth() {
             dispatch(signInSuccess(data));
             
             // Save user data to localStorage
-            localStorage.setItem('user', JSON.stringify(data.user));
+            localStorage.setItem('user', JSON.stringify(data._id));
 
             navigate('/Dashboard');
-            console.log(data);
         } catch (error) {
             console.log('Could not login with Google', error);
         }

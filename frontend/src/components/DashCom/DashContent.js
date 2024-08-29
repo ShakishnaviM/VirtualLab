@@ -34,10 +34,16 @@ function Dashcontent() {
   const navigate = useNavigate();
 
   useEffect(() => {
-      const storedUser = localStorage.getItem('user');
-      if (storedUser) {
-          setUser(JSON.parse(storedUser));
-      }
+    const storedUser = localStorage.getItem('user');
+    if (storedUser) {
+        try {
+            setUser(JSON.parse(storedUser));
+        } catch (error) {
+            console.error('Failed to parse stored user:', error);
+        }
+    } else {
+        console.log('No user found in localStorage.');
+    }
   }, []);
 
   const { currentUser } = useSelector((state) => state.user);
@@ -45,7 +51,6 @@ function Dashcontent() {
   useEffect(() => {
     const userID = user?._id || currentUser?._id;
     if (userID) {
-      console.log("User ID from currentUser:", userID);
       fetchAndUpdateCourses(userID);
     } else {
       console.error("User ID is undefined or currentUser is not available");
@@ -53,19 +58,17 @@ function Dashcontent() {
   }, [currentUser || user]);
 
   async function fetchProgressData(userID) {
-    console.log(`Sending request with userID: ${userID}`);
     try {
-      const response = await fetch(`http://localhost:3001/api/dashboard/progress/${userID}`, {
-        method: 'GET',
+      const response = await fetch("http://localhost:3001/api/dashboard/progress", {
+        method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-      });
-
+        body: JSON.stringify({ userID:userID }) // Adjust as needed
+    });
       if (!response.ok) {
         throw new Error('Network response was not ok');
       }
 
       const progressData = await response.json();
-      console.log("Progress data fetched:", progressData);
       return progressData;
     } catch (error) {
       console.error('Error fetching progress data:', error);
@@ -132,4 +135,3 @@ function Dashcontent() {
 }
 
 export default Dashcontent;
-

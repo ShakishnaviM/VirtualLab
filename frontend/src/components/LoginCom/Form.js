@@ -33,13 +33,14 @@ function CreateAccountForm() {
       });
   
       const data = await res.json();
-      console.log(data);
       if (data.success === false) {
         dispatch(signInFailure(data));
         return;
       }
       dispatch(signInSuccess(data));
-
+      
+      localStorage.setItem('user', JSON.stringify(data._id));
+      localStorage.setItem('admin', JSON.stringify(data.admin));
       setEmail("");
       setPassword("");
       navigate('/Dashboard'); // Use navigate function to navigate to the desired route

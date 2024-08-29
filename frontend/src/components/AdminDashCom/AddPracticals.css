@@ -1,0 +1,75 @@
+/* AddPracticals.css */
+
+.form-wrapper {
+    border-radius: 10px;
+    padding: 30px;
+    margin-left: 280px;
+    font-family: 'Arial', sans-serif;
+}
+
+.form-title {
+    font-size: 32px;
+    font-weight: 600;
+    color: rgb(20, 23, 83);
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.practicals-form {
+    margin-bottom: 20px;
+    background-color: #fff;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    padding: 50px;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    font-size: 18px;
+    color: rgb(20, 23, 83);
+    display: block;
+    font-weight: 400;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid black;
+    border-radius: 5px;
+    font-size: 14px;
+    color: #555;
+    outline: none;
+    transition: border-color 0.3s ease-in-out;
+}
+
+.form-group input:focus {
+    border-color: #1e90ff;
+}
+
+.submit-button {
+    width: 100%;
+    padding: 12px;
+    background: linear-gradient(135deg, #1e90ff, rgb(20, 23, 83));
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out;
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.submit-button:hover {
+    background: linear-gradient(135deg, #00c7ff, #1e90ff);
+}
+
+.submit-button:active {
+    background: linear-gradient(135deg, #1e90ff, #00c7ff);
+}

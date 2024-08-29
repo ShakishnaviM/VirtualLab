@@ -1,0 +1,39 @@
+/* SubjectCard.css */
+.subject-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 15px;
+    background-color: #FFFFFF;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    margin: 30px;
+    transition: transform 0.2s;
+}
+
+.subject-card:hover {
+    transform: translateY(-5px);
+}
+
+.subject-image {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.subject-info {
+    margin-top: 15px;
+    text-align: center;
+}
+
+.subject-info h3 {
+    margin: 0;
+    color: #333;
+}
+
+.subject-info p {
+    margin: 5px 0 0;
+    color: #777;
+}
