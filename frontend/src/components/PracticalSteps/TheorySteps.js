@@ -11,7 +11,7 @@ function TheorySteps() {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await axios.get(`http://localhost:3001/api/subjects/practicals/${subject}practicals?subject=${subject}`);
+                const response = await axios.get(`http://localhost:3001/api/subjects/practicals/${subject}/${subject}practicals?subject=${subject}`);
                 setData(response.data[index]);
             } catch (error) {
                 console.error("There was an error fetching the data!", error);

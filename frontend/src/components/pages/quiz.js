@@ -29,7 +29,7 @@ function Quiz() {
     useEffect(() => {
         const fetchQuestions = async () => {
             try {
-                const response = await axios.get('http://localhost:3001/api/subjects/practicals/biologypracticals?subject=biology');
+                const response = await axios.get('http://localhost:3001/api/subjects/practicals/biology/biologypracticals?subject=biology');
                 console.log("Fetched questions:", response.data); // Log the data structure
 
                 // Flatten the array of questions across all tests
