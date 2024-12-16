@@ -59,10 +59,9 @@ function Dashcontent() {
 
   async function fetchProgressData(userID) {
     try {
-      const response = await fetch("http://localhost:3001/api/dashboard/progress", {
-        method: 'POST',
+      const response = await fetch(`http://localhost:3001/api/dashboard/progress/${userID}`, {
+        method: 'GET',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ userID:userID }) // Adjust as needed
     });
       if (!response.ok) {
         throw new Error('Network response was not ok');
