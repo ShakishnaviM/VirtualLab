@@ -1,0 +1,73 @@
+/* AddSubjects.css */
+
+.form-container {
+    border-radius: 10px;
+    padding: 30px;
+    height: 100vh;
+    margin: 0px auto;
+    font-family: 'Arial', sans-serif;
+}
+
+.form-container h2 {
+    font-size: 32px;
+    font-weight: 600;
+    color: rgb(20, 23, 83);
+    margin-bottom: 20px;
+    margin-left: 700px !important;
+}
+
+.form-g {
+    margin-bottom: 20px;
+    background-color: #fff;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    margin-left: 580px;
+    padding: 50px;
+    width: 500px;
+}
+
+.form-g label {
+    font-size: 18px;
+    color: rgb(20, 23, 83) ;
+    margin-bottom: 5px;
+    display: block;
+    font-weight: 400;
+}
+
+.form-g input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid black;
+    border-radius: 5px;
+    font-size: 14px;
+    margin: 20px 0 20px 0;
+    color: #555;
+    outline: none;
+    transition: border-color 0.3s ease-in-out;
+}
+
+.form-g input:focus {
+    border-color: #1e90ff;
+}
+
+.submit-btn {
+    width: 100%;
+    padding: 12px;
+    background: linear-gradient(135deg, #1e90ff, rgb(20, 23, 83));
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out;
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.submit-btn:hover {
+    background: linear-gradient(135deg, #00c7ff, #1e90ff);
+}
+
+.submit-btn:active {
+    background: linear-gradient(135deg, #1e90ff, #00c7ff);
+}

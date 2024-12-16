@@ -8,6 +8,7 @@
     justify-content: center;
     align-items: center;
     margin-bottom: 20px;
+    margin-top: 20px;
 }
 
 .step-item {
@@ -46,7 +47,7 @@
     max-width: 100%;
     border-radius: 8px;
     border: 1px solid #ccc;
-    height: 500px;
+    height:500px;
 }
 
 .step-content p {
