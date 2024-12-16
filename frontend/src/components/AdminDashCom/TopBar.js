@@ -1,4 +1,3 @@
-import '../DashCom/Topbar.css';
 import './TopBar.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMagnifyingGlass, faEnvelopeOpen, faBell } from '@fortawesome/free-solid-svg-icons';
@@ -21,9 +20,9 @@ function Topbar() {
 
     return (
         <>
-            <div className='content--header'>
-                <div className='header--activity'>
-                    <div className='search-box'>
+            <div className='contentheader'>
+                <div className='headeractivity'>
+                    <div className='searchbox'>
                         <input type='text' placeholder='Type to search here...' />
                         <FontAwesomeIcon icon={faMagnifyingGlass} className='fa' />
                     </div>

@@ -8,6 +8,7 @@ import img3 from '../../assets/03.jpg'
 function ImageSlider() {
   return (
     <div className="image-slidecontainer">
+      <center>
       <div className="slider-inner-container">
         <Carousel>
           <Carousel.Item>
@@ -42,6 +43,7 @@ function ImageSlider() {
           </Carousel.Item>
         </Carousel>
       </div>
+      </center>
     </div>
   );
 }

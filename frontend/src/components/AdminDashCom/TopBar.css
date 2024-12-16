@@ -1,7 +1,6 @@
 .WelcomeBox p {
     padding-top: 10px;
     font-size: 18px;
-margin-left: -500px;
 }
 
 .pp {
@@ -9,3 +8,106 @@ margin-left: -500px;
     height: 40px;
     padding-top: 0;
 }
+.contentheader{
+    display: flex;
+    align-items: center;
+    background-color:rgb(16,17,39);
+    height: 100px;
+    margin-bottom: 1px;
+    border-bottom: #fff 2px solid;
+    width: 100%;
+    justify-content: space-between;
+}
+.headeractivity{
+    display: flex;
+    align-items: center;
+    margin-left: 10px;
+}
+.searchbox{
+    background: #21222a;
+    padding: 1px 2px;
+    border-radius: 18px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border:solid white 0.9px;
+   width: 300px;
+    height: 41px;
+    margin-left: 20px;
+}
+
+.searchbox input{
+    outline: #fff;
+    background: transparent;
+    padding: 5px;
+    color: white;
+    border: none;
+}
+
+.fa{
+    color: #fff;
+    font-size: 20px;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+    background: transparent;
+    padding-right: 10px;
+}
+.fa1{
+    font-size: 22px;
+
+}
+.notify1{
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-left: 420px;
+    width: 100%;
+}
+.notify{
+   background-color: rgb(217,217,217);
+    border-radius: 10px;
+    color: #21222a;
+    display: flex;
+    align-items: center;
+    height: 55px;
+    width: 200px;
+    align-items: center;
+    padding: 0 18px;
+    margin-left: 200px;
+
+    
+}
+.propic img{
+    
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background-color: #21222a;
+    object-fit: cover;
+}
+
+.nameofuser li{
+   font-size: 14px;
+
+list-style: none;
+padding-left: 20px;
+}
+
+.notify .icon{
+    font-size: 20px;
+    transition: 0.5s ease-in-out; 
+    scale: 1.8;
+    
+}
+.notify1 .icon{
+    font-size: 20px;
+    transition: 0.5s ease-in-out;
+   scale: 1.8;
+   
+}
+.icon:hover{
+    transform: scale(1.3);
+    cursor: pointer;
+}
+

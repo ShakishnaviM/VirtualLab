@@ -34,12 +34,7 @@ function AdminDashboard() {
     return (
         <div className="ContainerDashboard">
             <Topbar />
-            <div className="right" style={{backgroundColor: "rgb(141, 172, 207)"}}>
-                {renderContent()}
-            </div>
-            <div className="left">
-                <DashboardLeftSide setCurrentContent={setCurrentContent} />
-            </div>
+           <Subjects/>
         </div>
     );
 }

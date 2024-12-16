@@ -5,13 +5,11 @@
     padding: 20px;
     background-color:rgb(141, 172, 207);
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-   width: 1900px;
-    margin-left: 180px;
 }
 
 .slider-inner-container {
-    width: 90%;
     border-radius: 5px !important;
+    width: 1000px;
 }
 
 .carousel-item img {

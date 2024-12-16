@@ -1,5 +1,5 @@
 .subject-grid{
     display: flex;
-    margin-left: 400px;
     flex-direction: row;
+    justify-content: space-around;
 }

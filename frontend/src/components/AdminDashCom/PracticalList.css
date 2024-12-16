@@ -5,6 +5,10 @@
     margin: 0 auto;
 }
 
+.practical-list h2{
+    text-align: center;    
+    padding: 25px 0;
+    }
 .practicals-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr); /* 4 columns */

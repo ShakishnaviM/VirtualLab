@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import './UpdatePractical.css';
+import Topbar from './TopBar';
 
 function UpdatePractical() {
     const { subject, id } = useParams(); // Get subject and practical ID from URL
@@ -51,6 +52,8 @@ function UpdatePractical() {
     };
 
     return (
+        <>
+        <Topbar/>
         <div className="update-practical">
             <h2>Update {subject} Practical</h2>
             <form onSubmit={handleSubmit} className="update-form">
@@ -77,6 +80,7 @@ function UpdatePractical() {
                 <button type="submit" className="submit-btn">Update Practical</button>
             </form>
         </div>
+        </>
     );
 }
 

@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom';
 import axios from 'axios';
 import PracticalCard from './PracticalCard';
 import './PracticalList.css';
+import Topbar from './TopBar';
 
 function PracticalList () {
     const { subject } = useParams();
@@ -25,6 +26,8 @@ function PracticalList () {
     
 
     return (
+        <>
+            <Topbar/>
         <div className="practical-list">
             <h2>{subject} Practicals</h2>
             <div className="practicals-grid">
@@ -38,6 +41,7 @@ function PracticalList () {
                 ))}
             </div>
         </div>
+        </>
     );
 };
 
