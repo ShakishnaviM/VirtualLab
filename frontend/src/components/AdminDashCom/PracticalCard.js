@@ -1,18 +1,21 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import axios from 'axios';
 import './PracticalCard.css';
 
-const PracticalCard = ({ practical, subjectId }) => {
+const PracticalCard = ({ practical,practicalId }) => {
+    const { subject } = useParams();
+    
+    
     const navigate = useNavigate();
 
     const handleUpdate = () => {
-        navigate(`/admin/update-practical/${subjectId}/${practical._id}`);
+        navigate(`/admin/update-practical/${subject}/${practicalId}`);
     };
 
     const handleDelete = async () => {
         try {
-            await axios.delete(`http://localhost:3001/api/subjects/${subjectId}/practicals/${practical._id}`);
+            await axios.delete(`http://localhost:3001/api/subjects/${subject}List/${practicalId}`);
             alert('Practical deleted successfully!');
             // Optionally, you can refresh the list after deletion
             window.location.reload();

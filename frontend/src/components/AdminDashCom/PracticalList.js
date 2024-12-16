@@ -6,19 +6,23 @@ import './PracticalList.css';
 
 function PracticalList () {
     const { subject } = useParams();
-    const [practicals, setPracticals] = useState([]);
+    console.log('Subject from URL:', subject);
+        const [practicals, setPracticals] = useState([]);
 
     useEffect(() => {
-        const fetchPracticals = async () => {
-            try {
-                const response = await axios.get(`http://localhost:3001/api/subjects/${subject}List?subject=${subject}`);
-                setPracticals(response.data);
-            } catch (error) {
-                console.error('Error fetching practicals:', error);
-            }
-        };
-        fetchPracticals();
+        if (subject) {
+            const fetchPracticals = async () => {
+                try {
+                    const response = await axios.get(`http://localhost:3001/api/subjects/${subject}List?subject=${subject}`);
+                    setPracticals(response.data);
+                } catch (error) {
+                    console.error('Error fetching practicals:', error);
+                }
+            };
+            fetchPracticals();
+        }
     }, [subject]);
+    
 
     return (
         <div className="practical-list">
@@ -29,6 +33,7 @@ function PracticalList () {
                         key={practical._id}
                         practical={practical}
                         subjectId={subject}
+                        practicalId={practical._id}
                     />
                 ))}
             </div>

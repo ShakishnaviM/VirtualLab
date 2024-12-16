@@ -3,9 +3,11 @@ import axios from 'axios';
 import SubjectCard from './SubjectCard';
 import './subjectBox.css';
 import ImageSlider from './slider';
+import { useNavigate } from 'react-router-dom';
 
-const Subjects = ({ onSubjectClick }) => {
+const Subjects = () => {
     const [subjects, setSubjects] = useState([]);
+    const navigate = useNavigate();
 
     useEffect(() => {
         const fetchSubjects = async () => {
@@ -19,15 +21,23 @@ const Subjects = ({ onSubjectClick }) => {
         fetchSubjects();
     }, []);
 
+    const handleSubjectClick = (subjectName) => {
+        navigate(`/Admin/showPracticals/${subjectName.toLowerCase()}`);
+    };
+
     return (
         <>
         <div className="subject-grid">
             {subjects.map((subject) => (
-                <SubjectCard 
-                    key={subject._id} 
-                    subject={subject} 
-                    onClick={() => onSubjectClick(subject)} 
-                />
+               <SubjectCard 
+               key={subject._id} 
+               subject={subject} 
+               onClick={(e) => { 
+                   e.preventDefault(); // Prevent default behavior
+                   handleSubjectClick(subject.name); 
+               }} 
+           />
+           
             ))}
             
         </div>

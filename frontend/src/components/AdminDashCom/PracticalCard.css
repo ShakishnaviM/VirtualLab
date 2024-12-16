@@ -1,55 +1,81 @@
-/* PracticalCard.css */
+/* PracticalList Grid Layout */
+.practical-list {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.practicals-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 columns */
+    gap: 20px; /* Space between cards */
+}
+
+/* Practical Card Styling */
 .practical-card {
-    background-color: #FFFFFF;
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     padding: 15px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.2s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    transition: transform 0.2s ease-in-out;
 }
 
 .practical-card:hover {
-    transform: translateY(-5px);
+    transform: translateY(-5px); /* Hover effect */
 }
 
-.practical-card h3 {
-    color: #333;
+.practical-card img {
+    width: 100%; /* Full width image */
+    height: 150px; /* Fixed height */
+    object-fit: cover;
+    border-radius: 8px;
     margin-bottom: 10px;
 }
 
-.practical-card p {
-    color: #777;
-    margin-bottom: 15px;
+.practical-card h4 {
+    font-size: 1.1rem;
+    margin: 10px 0;
+    color: #333;
 }
 
-.practical-actions {
-    display: flex;
-    justify-content: space-between;
+/* Card Actions - Update and Delete Buttons */
+.card-actions {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 equal columns */
+    gap: 10px; /* Space between buttons */
+    width: 100%;
+    margin-top: 10px;
 }
 
-.update-btn,
-.delete-btn {
-    padding: 10px 15px;
-    border-radius: 5px;
+.card-actions .update-btn,
+.card-actions .delete-btn {
+    padding: 8px 10px;
+    font-size: 0.9rem;
+    color: #fff;
     border: none;
+    border-radius: 5px;
     cursor: pointer;
-    font-size: 14px;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.2s;
+    bottom:5px;
 }
 
 .update-btn {
-    background-color: #4A90E2;
-    color: #fff;
+    background-color: #4CAF50; /* Green */
 }
 
 .update-btn:hover {
-    background-color: #357ABD;
+    background-color: #45a049;
 }
 
 .delete-btn {
-    background-color: #E94A4A;
-    color: #fff;
+    background-color: #f44336; /* Red */
 }
 
 .delete-btn:hover {
-    background-color: #C13C3C;
+    background-color: #d32f2f;
 }

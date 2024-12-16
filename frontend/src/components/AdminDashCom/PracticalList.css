@@ -1,18 +1,80 @@
-/* PracticalsList.css */
-.practicals-list {
+/* PracticalList Grid Layout */
+.practical-list {
     padding: 20px;
-    background-color: #FFFFFF;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
-.practicals-list h2 {
-    margin-bottom: 20px;
+.practicals-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 columns */
+    gap: 20px; /* Space between cards */
+}
+
+/* Practical Card Styling */
+.practical-card {
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    transition: transform 0.2s ease-in-out;
+}
+
+.practical-card:hover {
+    transform: translateY(-5px); /* Hover effect */
+}
+
+.practical-card img {
+    width: 100%; /* Full width image */
+    height: 150px; /* Fixed height */
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.practical-card h4 {
+    font-size: 1.1rem;
+    margin: 10px 0;
     color: #333;
 }
 
-.practical-cards {
+/* Card Actions - Update and Delete Buttons */
+.card-actions {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
+    grid-template-columns: repeat(2, 1fr); /* 2 equal columns */
+    gap: 10px; /* Space between buttons */
+    width: 100%;
+    margin-top: 10px;
+}
+
+.card-actions .update-btn,
+.card-actions .delete-btn {
+    padding: 8px 10px;
+    font-size: 0.9rem;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.update-btn {
+    background-color: #4CAF50; /* Green */
+}
+
+.update-btn:hover {
+    background-color: #45a049;
+}
+
+.delete-btn {
+    background-color: #f44336; /* Red */
+}
+
+.delete-btn:hover {
+    background-color: #d32f2f;
 }

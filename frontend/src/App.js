@@ -22,6 +22,7 @@ import AdminDashboard from './components/pages/AdminDashboard.js';
 import addSubjects from './components/AdminDashCom/AddSubjects.js';
 import AdminAddPractical from './components/AdminDashCom/AddPracticals.js';
 import AdminSubjectList from './components/AdminDashCom/subjectBox.js';
+import AdminPracticalList from './components/AdminDashCom/PracticalList.js'
 
 import { Protected } from './components/LoginCom/Protected.js';
 import { UserProtect } from './components/LoginCom/UserProtect.js';
@@ -55,7 +56,7 @@ function App() {
               <Route path='/admin/addPrcticals' exact element={<UserProtect><AdminAddPractical/></UserProtect>}/>
               <Route path='/Admin/addSubjects' exact element={<UserProtect><addSubjects/></UserProtect>}/>
               <Route path='/Admin/showSubjects' exact element={<UserProtect><AdminSubjectList/></UserProtect>}/>
-
+              <Route path='/Admin/showPracticals/:subject' exact element={<UserProtect><AdminPracticalList/></UserProtect>}/>
             </Routes>
           </Router>
         </PersistGate>
