@@ -34,7 +34,7 @@ function TheorySteps() {
 
     return (
         <div className="theory-steps-container">
-            <h2>Steps Involved</h2>
+            <center><h2>Steps Involved</h2></center>
             <div className="steps-progress-bar">
                 {data.tests[0].procedure.map((step, stepIndex) => (
                     <div key={step._id} className={`step-item ${selectedStep === stepIndex ? 'active' : ''}`} onClick={() => handleStepClick(stepIndex)}>
