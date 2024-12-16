@@ -6,6 +6,14 @@ import './NavBar.css';
 import {useSelector} from 'react-redux';
 
 function NavBar() {
+  const [user, setUser] = useState(null);
+
+    useEffect(() => {
+        const storedUser = localStorage.getItem('user');
+        if (storedUser) {
+            setUser(JSON.parse(storedUser));
+        }
+    }, []);
   const [prevScrollPos, setPrevScrollPos] = useState(window.pageYOffset);
   const [isNavVisible, setIsNavVisible] = useState(true);
   const {currentUser} = useSelector((state) => state.user);
@@ -37,7 +45,7 @@ function NavBar() {
           </Link>
           <Link to='/Dashboard' className='link'style={{textDecoration:'none'}}>
             {currentUser ? (
-              <img src={currentUser.profilePicture} alt="profile" />
+              <img src={currentUser?.profilePicture || user?.profilePicture} alt="profile" />
             ):(
             <li className='navbtnLogin'>SignIn</li>
           )}
