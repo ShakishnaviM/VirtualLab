@@ -13,24 +13,24 @@ function ImageSlider() {
       <img style={{height:'350px',width:'900px' ,borderRadius: '20px'}}
         src={img1} text="First slide" />
         <Carousel.Caption>
-          <h3>First slide label</h3>
-          <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+          <h4 className='carouselcap'>First slide label</h4>
+          <p className='carouselcap_P'>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
         </Carousel.Caption>
       </Carousel.Item>
       <Carousel.Item>
       <img style={{height:'350px',width:'900px' ,borderRadius: '20px'}}
         src={img2} text="Second slide" />
         <Carousel.Caption>
-          <h3>Second slide label</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          <h3 className='carouselcap'>Second slide label</h3>
+          <p className='carouselcap_P'>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
         </Carousel.Caption>
       </Carousel.Item>
       <Carousel.Item>
       <img style={{height:'350px',width:'900px' ,borderRadius: '20px'}}
         src={img3} text="Third slide" />
         <Carousel.Caption>
-          <h3>Third slide label</h3>
-          <p>
+          <h3 className='carouselcap'>Third slide label</h3>
+          <p className='carouselcap_P'>
             Praesent commodo cursus magna, vel scelerisque nisl consectetur.
           </p>
         </Carousel.Caption>

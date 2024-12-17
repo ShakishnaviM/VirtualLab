@@ -1,13 +1,17 @@
 .ContainerLast{
     margin-left: 292px;
-    width: calc(100% - 292);
+    width:100%;
     display: flex;
     justify-content: center;
-    background-color:rgb(20,23,83);
-
-    
+    background-color:rgb(20,23,83);   
 }
-.inside{
-    margin-top: 80px;
-    margin-bottom: 60px;
+.inside {
+    width:1000px;
+}
+
+.inside .carouselcap{
+    font-size: 30px;
+}
+.inside .carouselcap_P{
+    font-size: 20px;
 }
