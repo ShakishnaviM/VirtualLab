@@ -16,7 +16,7 @@ export default function Profile() {
   const [user, setUser] = useState(null);
 
   useEffect(() => {
-      const storedUser = localStorage.getItem('root');
+      const storedUser = localStorage.getItem('persist:root');
       if (storedUser) {
           setUser(JSON.parse(storedUser));
       }

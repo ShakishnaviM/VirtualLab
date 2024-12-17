@@ -1,32 +1,30 @@
-/* General Styles */
-.title1 {
-    margin-top: 20px;
+.title1{
     background-color: #151854;
-    height: 80px;
+    height: 80px;    
 }
 
-.heading1 {
+.heading1{
     font-family: Calibri (Body);
     color: #FFFFFF;
     text-align: center;
+    text-justify: distribute-all-lines;
     margin-top: 15px;
     font-size: 50px;
 }
 
-.hr1 {
+.hr1{
     width: 25%;
-    height: 50px;
+    font-weight: 100;
     color: #FFFFFF;
     margin-top: 10px;
-    margin-left: 550px;
+    margin-left: 580px;
 }
 
-/* Container Styles */
-.container {
+.container{
     width: 700px;
     margin: auto;
     margin-top: 25px;
-    background: #f0f8ff;
+    background: #babeff7c;
     color: #000000;
     display: flex;
     flex-direction: column;
@@ -42,31 +40,28 @@
     to { opacity: 1; }
 }
 
-/* Header Styles */
-.container h3 {
-    color: #00008b;
-    font-weight: 550;
+
+.container h5{
+    color: #000000ce;
+    font-weight: 250;
     margin-top: 5px;
     margin-left: 15px;
-    font-size: 50px;
 }
 
-.container hr {
-    height: 7px;
+.container hr{
+    height: 1px;
     border: none;
     background: #00000052;
 }
 
-/* Question Styles */
-.container h2 {
-    font-size: 22px;
-    font-weight: 400;
+.container h2{
+    font-size: 20px;
+    font-weight: 350;
     margin-top: 10px;
     margin-left: 30px;
-    color: #00008b;
 }
 
-.container ul li {
+.container ul li{
     display: flex;
     align-items: center;
     height: 50px;
@@ -79,14 +74,11 @@
     width: 80%;
     transition: background-color 0.3s ease, transform 0.3s ease;
 }
-
 .container ul li:hover {
     background-color: #add8e6;
     transform: scale(1.05);
 }
-
-/* Button Styles */
-.container button {
+.container button{
     margin: auto;
     width: 200px;
     height: 50px;
@@ -95,7 +87,7 @@
     font-size: 25px;
     font-weight: 500;
     border-radius: 10px;
-    cursor: pointer;
+    cursor: pointer;    
     transition: background-color 0.3s ease;
 }
 
@@ -103,11 +95,11 @@
     background-color: #00008b;
 }
 
-.container .index {
+.container .index{
     margin: auto;
     font-size: 13px;
-    font-weight: 400;
-    color: #00008b;
+    color: #000000b0;
+    margin-bottom: 10px;
 }
 
 .container ul li.correct {
@@ -126,48 +118,73 @@
 .results {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: center;}
+
+.results h4{
+    color: #000000a2;
 }
 
-.results h2 {
-    margin-bottom: 30px;
-    font-size: 30px;
+.profpic img{
+    margin-top: 30px;
+    width: 95%;
+    height: 65%;
 }
 
-.f-result {
-    text-align: center;
-    margin-left: 50px;
+.profdesc{
+    margin-top: 70px;
+    margin-left: 10px
 }
 
-.f-result h4 {
-    margin-top: 15px;
+.medalpic{
+    width: 140%;
+    height: 100%;
+    margin-left: -40px;
+    margin-top: -50px;
+}
+
+.name{
+    margin-top: -20px;
     font-size: 15px;
 }
 
-.f-result h5 {
-    margin-bottom: 0;
-    font-size: 45px;
-    color: #00008b;
+.emal{
+    margin-top: -3px;
+    color: rgba(0, 0, 0, 0.61);
 }
 
-.best-try {
-    color: orange;
+.f-resu h2{
+    margin-left: -80px;
+    font-size: 30px;
+    width: 300%;
+    font-weight: 500;
+    color: #002981af;
 }
 
-.try-again {
-    color: blue;
+.f-result{
+    background-color: #ffffff;
+    width: 100%;
+    text-align: center;
+    margin-left: 45px;
+    border-radius: 50px;
 }
 
-.congratulations {
-    color: green;
+.col h1{
+    margin-top: 10px;
 }
 
-.buttons {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
+.col h4{
+    margin-top: -18px;
+    margin-bottom: 13px;
+    color: rgba(0, 0, 0, 0.356);
+    font-weight: 500;
 }
 
-.buttons Button {
-    width: 150px;
+.toReview{
+    margin-left: 90px;
+}
+
+.buttons{
+    text-align: center;
+    word-spacing: 30px;
+    margin-top: -10px;
 }

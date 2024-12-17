@@ -9,7 +9,7 @@ function NavBar() {
   const [user, setUser] = useState(null);
 
     useEffect(() => {
-        const storedUser = localStorage.getItem('user');
+        const storedUser = localStorage.getItem('root');
         if (storedUser) {
             setUser(JSON.parse(storedUser));
         }
