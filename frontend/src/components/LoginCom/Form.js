@@ -53,8 +53,9 @@ function CreateAccountForm() {
     <>
       <div className="formContainerSign">
          <div className="formHeader">
-         <img src="pictures/VirtualLab Logo.png" alt='logo' />
-          
+         <a href="/">
+            <img src="pictures/VirtualLab Logo.png" alt='logo' />
+          </a>          
         </div>    
         <div className="formCreateAccount">
           <h2>Log In</h2>
