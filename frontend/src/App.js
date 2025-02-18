@@ -36,7 +36,7 @@ function App() {
         <PersistGate persistor={persistor} loading={null}>
           <Router>
             <Routes>
-              <Route path='/' exact element={<Protected><Home /></Protected>} />
+              <Route path='/' exact element={<Protected><Home /></Protected>} /> //add home route
               <Route path='/SignUp' exact element={<SignUp />} />
               <Route element = {<PrivateRoute/>}>
                    <Route path='/Dashboard' exact element={<Protected><Dashboard /></Protected>} />
