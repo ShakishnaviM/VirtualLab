@@ -17,13 +17,7 @@ import PrivateRoute from './components/PrivateRoute.js';
 import Profile from './components/DashCom/Profile';
 import Chatbot from './components/ChatCom/chatbot'
 import DashboardQuizz from './components/pages/DashboardQuizz.js';
-import AdminDashboard from './components/pages/AdminDashboard.js';
 
-import addSubjects from './components/AdminDashCom/AddSubjects.js';
-import AdminAddPractical from './components/AdminDashCom/AddPracticals.js';
-import AdminSubjectList from './components/AdminDashCom/subjectBox.js';
-import AdminPracticalList from './components/AdminDashCom/PracticalList.js'
-import UpdatePractical from './components/AdminDashCom/UpdatePractical.js';
 
 import { Protected } from './components/LoginCom/Protected.js';
 import { UserProtect } from './components/LoginCom/UserProtect.js';
@@ -53,12 +47,7 @@ function App() {
               <Route path='/Review' exact element={<Protected><Review /></Protected>} />
               <Route path='/chatbot' exact element={<Protected><Chatbot/></Protected>}/>
               <Route path='/DashboardQuiz' exact element={<Protected><DashboardQuizz/></Protected>}/>
-              <Route path='/AdminDashboard' exact element={<UserProtect><AdminDashboard/></UserProtect>}/>
-              <Route path='/admin/addPrcticals' exact element={<UserProtect><AdminAddPractical/></UserProtect>}/>
-              <Route path='/Admin/addSubjects' exact element={<UserProtect><addSubjects/></UserProtect>}/>
-              <Route path='/Admin/showSubjects' exact element={<UserProtect><AdminSubjectList/></UserProtect>}/>
-              <Route path='/Admin/showPracticals/:subject' exact element={<UserProtect><AdminPracticalList/></UserProtect>}/>
-              <Route path="/admin/update-practical/:subject/:id" element={<UpdatePractical />}/>
+           
             </Routes>
           </Router>
         </PersistGate>
